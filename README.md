@@ -3,7 +3,7 @@
 
 在下愚钝，开始集成并不顺利，在Tinker的官方技术人员的悉心指导之下，花了一天多的时间终于有点运行出了
 
-我的一个小补丁,还是很开心的,看图说话：
+我的一个小补丁,还是很开心的。 看图说话：
 
 
 ![image](https://github.com/tomyZhou/TinkerDemo/blob/master/scrrenshot/old.png)   
