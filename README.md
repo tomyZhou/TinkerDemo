@@ -42,21 +42,27 @@
 	
 	2.配置好了后，点击右边Gradle视图中的build/assembleRelease（如图三），此时会在build/bakApk里生成
 	
-	app-1.0.0-xxxx-xx-xx-xx/release/app-release.apk(mapping 和 R.txt),这里着重需要说明的是"xxxx-xx-xx-xx"这个是根据
+	app-1.0.0-xxxx-xx-xx-xx/release/app-release.apk(mapping 和 R.txt),这里着重需要说明的是"xxxx-xx-xx-xx"
 	
-	当前时间戳生成的一个字符串，所以每次生成时都会不一样，此事跟下一步的操作有关。（如图一）
+	这个是根据当前时间戳生成的一个字符串，所以每次生成时都会不一样，此事跟下一步的操作有关。（如图一）
 	
 	
-	3.步骤2完成了以后，我们就生成了初始安装包。下一步，我们修改代码，例子里我就写了 tv_hello.setText("5.25发了个补丁，修复了bug")。
+	3.步骤2完成了以后，我们就生成了初始安装包。下一步，我们修改代码，例子里我就写了
+
+	tv_hello.setText("5.25发了个补丁，修复了bug")。
 	
 	
 	4.接下来一步最为重要：我们要把我们在2步骤里生成的三个文件的具体路径地址把tinkerpatch.gradle的 baseApkFile ，
 	
-	baseProguardMappingFile ，baseResourceRFile  三个变量赋值（如图一）。主要是因为2步骤里的"xxxx-xx-xx-xx"路径每次生成时间戳不一样，
+	baseProguardMappingFile ，baseResourceRFile  三个变量赋值（如图一）。主要是因为2步骤里的"xxxx-xx-xx-xx"路径
 	
-	所以这里要写死。写好了以后，我们双击Grale视图里的tinker/tinkerPatchRelease（如图三），此事正常会生成
+	每次生成时间戳不一样，所以这里要写死。写好了以后，我们双击Grale视图里的tinker/tinkerPatchRelease（如图三），
 	
-	outputs/tinkerPatch/release/patch_signed_7zip.apk 这个就是我们要的补丁的压缩版。如果之前的
+	此事正常会生成outputs/tinkerPatch/release/patch_signed_7zip.apk 这个就是我们要的补丁的压缩版。如果那三个变量所指向
+
+	的原始包地址不对，会编译不成功，提示找不到xxx.apk。
 	
-	5.最后发布版本。注意版本号要和 tinkerpath.gradle里的配置 appVersion = "1.0.0" 一致，而不是和 app/build.gradle里的versionName一致。（如图四）
+	5.最后发布版本。注意版本号要和 tinkerpath.gradle里的配置 appVersion = "1.0.0" 一致，而不是和 app/build.gradle里
+	
+	的versionName一致。（如图四）
 	
