@@ -79,9 +79,9 @@
 	
 运行成功了，下面我们来看看例子中代码几处重要的地方：
 
-	1.Application  文档中说到了Application有两种实现方式，我用的是 reflectApplication = true这种，SampleApplication extends Application，
+	1.Application  文档中说到了Application有两种实现方式，我用的是 reflectApplication = true这种
 	
-	在Application里面初始化。
+	public class SampleApplication extends Application，在Application里面初始化Tinker。
 	
 	2.注意SampleApplication中添加一个空的构造函数：public SampleApplication() {}  否则AndroidManifest.xml 中会报错。
 		 
