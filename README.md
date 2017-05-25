@@ -66,3 +66,28 @@
 	
 	的versionName一致。（如图四）
 	
+
+测试步骤：
+
+	1. 安装 old.apk ，安装查看原始效果。
+	
+	2. 到tinkerpatch官网后台发布补丁。http://www.tinkerpatch.com
+	
+	3. 清除项目进程，过5秒左右重新进入项目，正常的话补丁就生效了。
+	
+	
+	
+运行成功了，下面我们来看看例子中代码几处重要的地方：
+
+	1.Application  文档中说到了Application有两种实现方式，我用的是 reflectApplication = true这种，SampleApplication extends Application，
+	
+	在Application里面初始化。
+	
+	2.注意SampleApplication中添加一个空的构造函数：public SampleApplication() {}  否则AndroidManifest.xml 中会报错。
+		 
+	3.Tinker和HotFix有点不一样，补丁不是主动推送下来的，需要我们在关键的地方请求一下服务器是否有补丁。
+	
+	（官方说明：http://www.tinkerpatch.com/Docs/FAQ）
+	
+	 本例由于我只有一个Activity，所以我就放在onCreate里面了。
+	
