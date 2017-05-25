@@ -70,7 +70,7 @@
 
 测试步骤：
 
-	1. 安装 old.apk ，安装查看原始效果。
+	1. 安装原程序包 ，查看原始效果。
 	
 	2. 到tinkerpatch官网后台发布补丁。http://www.tinkerpatch.com
 	
